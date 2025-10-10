@@ -1,0 +1,635 @@
+:root {
+  --primary-color: #000B4F;    /* deep navy */
+  --secondary-color: #ffb703;  /* warm yellow */
+  --accent-color: #023047;     /* dark teal */
+  --highlight-color: #fb8500;  /* vibrant orange */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color:white;
+
+}
+
+/* navbar area */
+.navbar{
+    background-color: white;
+    border-radius: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0 ,0.1);
+    max-width: 85%;
+    margin:20px 20px 20px 100px ;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo{
+    font-size: 20pxpx;
+    font-weight: bold;
+    padding: 15px;
+    font-family: montserrat, sans-serif;
+   font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 20px;
+    color:var(--primary-color) ;
+
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    
+}
+.nav-links li{
+    padding-right: 10px;
+
+}
+.nav-links li a{
+    text-decoration: none;
+    color:black ;
+    font-family: montserrat, sans-serif;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+
+/* home section */
+.home-section{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    gap: 20px;   
+}
+
+.home-text {
+  flex: 1;                   
+  max-width: 50%;   
+ 
+}
+
+.home-text h1{
+    font-size: 48px;
+    color: var(--highlight-color);
+    font-weight:80 ;
+    font-family: montserrat, sans-serif;
+    margin-bottom: 0;
+}
+.home-text h2{
+    font-size: 60px;
+    font-weight:bold;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    font-family: playfair display, serif;
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+.home-text h3{
+    font-size: 24px;
+    color: var(--accent-color);
+    font-weight:100 ;
+    font-family: montserrat, sans-serif;
+    margin-top: 0;
+    text-transform: uppercase; 
+}
+.home-text p{
+    font-size: large;
+    font-family: playfair display, serif;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.btn {
+  background: var(--secondary-color);   /* yellow */
+  color: var(--primary-color);          /* deep navy text */
+  padding: 12px 24px;
+  margin-right: 10px;  
+  margin-top: 30px;                 /* space between buttons */
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;            /* makes button text uppercase */
+  transition: all 0.3s ease;            /* smooth hover effect */
+}
+
+.btn:hover {
+  background: var(--highlight-color);   /* orange */
+  color: var(--bg-color, #ffffff);      /* white text on hover */
+  transform: translateY(-2px);          /* slight lift */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+.home-section img {
+  flex: 1;
+  max-width: 50%;            
+  height: auto;
+  border-radius: 12px;       
+  object-fit: cover;         
+}
+
+.numbers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+   
+
+}
+.numbers p{
+    font-size: 15px;
+    font-weight: lighter;
+    padding-right: 10px;
+}
+
+/* about section */
+.about-section {
+  padding: 60px 100px;
+  background-color: #f5f5f5; /* light gray background */
+  max-width:100%;
+}
+.about-section .about-h{
+  text-align: center;
+  margin: 5px auto;
+  max-width: 800px;
+  color: #023047;
+  font-size: 36px;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+  font-family: montserrat,sans-serif;
+}
+.about-section > p {
+  text-align: center;
+  margin: 10px auto;;
+  font-size: large;
+  font-family: playfair display, serif;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  width: 100%;
+  gap: 40px;
+}
+
+
+.about-content img {
+  flex: 1;
+  max-width: 50%;
+  height: 450px;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 50%;
+  color: #333;
+ margin-bottom: 50px;
+}
+
+.about-section .about-text h2 {
+  font-family: playfair display,serif;
+  color: var(--highlight-color);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+.about-text p {
+  line-height: 1.6;
+  font-size: large;
+  font-family: playfair display, serif;
+}
+.about-text .about-p{
+   font-family: "Dancing Script", cursive;
+   font-size: 20px;
+   letter-spacing: 2px;
+}
+
+
+/* specialities */
+.specialities {
+  padding: 40px 0;
+  text-align: left;
+}
+
+.specialities h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--highlight-color);
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--highlight-color);
+  padding-left: 10px;
+}
+
+.cards-wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  min-width: 220px;
+  height: 250px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color:white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Overlay for better text visibility */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  transition: background 0.3s ease;
+}
+
+.card:hover::before {
+  background: rgba(5, 4, 4, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Unique backgrounds for each card */
+.card.voiceover {
+  background-image: url('images/voiceover.jpg');
+}
+
+.card.hosting {
+  background-image: url('images/hosting.jpg');
+}
+
+.card.podcast {
+  background-image: url('images/podcast.jpg');
+}
+
+.card.poetry {
+  background-image: url('images/poetry.jpg');
+}
+
+.card.emceeing {
+  background-image: url('images/emceeing.jpg');
+}
+
+/* Scroll buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--secondary-color, #333);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.scroll-btn:hover {
+  background-color: var(--primary-color, #555);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+.services-section{
+  padding:10px;
+  background-color: #f5f5f5; /* light gray background */
+  max-width:100%;
+  padding-bottom: 60px;
+}
+.services-section h1{
+  text-align: center;
+  margin: 5px auto;
+  margin-top: 50px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  max-width: 800px;
+  color: #023047;
+  font-size: 36px;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+  font-family: montserrat,sans-serif;
+}
+.services-section p {
+  text-align: center;
+  margin: 10px auto;;
+  font-size: large;
+  font-family: playfair display, serif;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.voiceover-cards h3{
+  font-family: "Playfair Display", serif;
+  color: var(--highlight-color);
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--highlight-color);
+  padding-left: 10px;
+}
+.voiceover-cards h4{
+  font-family: montserrat,sans-serif;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 200;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.voiceover-cards p{
+  font-family: "Playfair Display", serif;
+  color:black;
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 0px;
+  margin-bottom: 20px;
+  padding-left: 0px;
+}
+/* Unique backgrounds for each voice over cards*/
+.card.commercial {
+  background-image: url('images/IMG-20251004-WA0017.jpg');
+}
+
+.card.narration {
+  background-image: url('images/hosting.jpg');
+}
+
+.card.telephony {
+  background-image: url('images/podcast.jpg');
+}
+
+.card.intros {
+  background-image: url('images/poetry.jpg');
+}
+
+.card.documentary {
+  background-image: url('images/emceeing.jpg');
+}
+.card.swahili {
+  background-image: url('images/emceeing.jpg');
+}
+
+/* poetry cards */
+
+.poetry-cards h3{
+  font-family: "Playfair Display", serif;
+  color: var(--highlight-color);
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 70px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  border-left: 4px solid var(--highlight-color);
+  padding-left: 10px;
+}
+.poetry-cards h4{
+  font-family: montserrat,sans-serif;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 200;
+  margin-left: 70px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.poetry-cards p{
+  font-family: "Playfair Display", serif;
+  color:black;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 10px;
+  padding-left: 1.6rem;
+  padding-bottom: 10px;
+}
+/* Unique backgrounds for each poetry card */
+.card.womanhood {
+  background-image: url('images/IMG-20251004-WA0015.jpg');
+}
+
+.card.mental {
+  background-image: url('images/hosting.jpg');
+}
+
+.card.social {
+  background-image: url('images/podcast.jpg');
+}
+
+.card.identity{
+  background-image: url('images/poetry.jpg');
+}
+
+.card.faith{
+  background-image: url('images/emceeing.jpg');
+}
+
+
+/* mc cards */
+.mc-cards h3{
+  font-family: "Playfair Display", serif;
+  color: var(--highlight-color);
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 70px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  border-left: 4px solid var(--highlight-color);
+  padding-left: 10px;
+}
+.mc-cards h4{
+  font-family: montserrat,sans-serif;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 200;
+  margin-left: 70px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.mc-cards p{
+  font-family: "Playfair Display", serif;
+  color:black;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 20px;
+  padding: 10px;
+  
+ 
+  padding-left: 1.6rem;
+}
+/* Unique backgrounds for each mc card */
+.card.corporate {
+  background-image: url('images/IMG-20251004-WA0015.jpg');
+}
+
+.card.brand {
+  background-image: url('images/hosting.jpg');
+}
+
+.card.awards {
+  background-image: url('images/podcast.jpg');
+}
+
+.card.launches{
+  background-image: url('images/poetry.jpg');
+}
+
+.card.conferences{
+  background-image: url('images/emceeing.jpg');
+}
+.card.community{
+  background-image: url('images/emceeing.jpg');
+}
+
+/* clients and collaborations */
+.client-section {
+  padding: 60px 100px;
+  background-color: white;
+  max-width: 100%;
+}
+.client-section .client-h {
+  text-align: center;
+  margin: 5px auto;
+  max-width: 800px;
+  color: #023047;
+  font-size: 36px;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+  font-family: montserrat, sans-serif;
+}
+.client-section > p {
+  text-align: center;
+  margin: 10px auto;
+  font-size: large;
+  font-family: playfair display, serif;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.client-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.client-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  width: 100%;
+  gap: 40px;
+}
+
+.client-text {
+  flex: 1;
+  max-width: 50%;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.client-section .client-text h2 {
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  font-size: 2.0rem;
+  padding-left: 40px;
+}
+
+/* Slideshow container */
+.slideshow {
+  position: relative;
+  flex: 1;
+  max-width: 50%;
+  height: 300px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+/* Each slide */
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image inside slide */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+/* Fade animation */
+.fade {
+  animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
