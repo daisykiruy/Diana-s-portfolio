@@ -7,23 +7,30 @@
 
 body{
     margin: 0;
+    margin-top: 100px;
     padding: 0;
     background-color:white;
 
 }
 
 /* navbar area */
-.navbar{
-    background-color: white;
-    border-radius: 35px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0 ,0.1);
-    max-width: 85%;
-    margin:20px 20px 20px 100px ;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar {
+  background-color: white;
+  border-radius: 35px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0 ,0.1);
+  max-width: 85%;
+  margin: 20px 20px 0px 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;                /* keeps it at the top of the screen */
+  left: 0;
+  right: 0;
+  z-index: 1000;         /* ensures it's always above all other content */
 }
+
 .navbar .logo{
     font-size: 20pxpx;
     font-weight: bold;
@@ -59,6 +66,7 @@ body{
     display: flex;
     justify-content: space-between;
     margin-left: 100px;
+    padding-top: 50px;
     gap: 20px;   
 }
 
@@ -74,6 +82,7 @@ body{
     font-weight:80 ;
     font-family: montserrat, sans-serif;
     margin-bottom: 0;
+    padding-top: 20px;
 }
 .home-text h2{
     font-size: 60px;
@@ -147,7 +156,7 @@ body{
 
 /* about section */
 .about-section {
-  padding: 60px 100px;
+  padding: 80px 100px;
   background-color: #f5f5f5; /* light gray background */
   max-width:100%;
 }
@@ -161,6 +170,7 @@ body{
   text-underline-offset: 8px;
   text-decoration-thickness: 2px;
   font-family: montserrat,sans-serif;
+  padding-top: 15px;
 }
 .about-section > p {
   text-align: center;
@@ -346,8 +356,13 @@ body{
   right: 0;
 }
 
+
+
+/* services-services */
+
 .services-section{
   padding:10px;
+  padding-top: 90px;
   background-color: #f5f5f5; /* light gray background */
   max-width:100%;
   padding-bottom: 60px;
@@ -355,7 +370,7 @@ body{
 .services-section h1{
   text-align: center;
   margin: 5px auto;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 0;
   padding-bottom: 0;
   max-width: 800px;
@@ -514,8 +529,6 @@ body{
   font-weight: 400;
   margin: 20px;
   padding: 10px;
-  
- 
   padding-left: 1.6rem;
 }
 /* Unique backgrounds for each mc card */
@@ -544,7 +557,7 @@ body{
 
 /* clients and collaborations */
 .client-section {
-  padding: 60px 100px;
+  padding: 80px 100px;
   background-color: white;
   max-width: 100%;
 }
@@ -558,6 +571,7 @@ body{
   text-underline-offset: 8px;
   text-decoration-thickness: 2px;
   font-family: montserrat, sans-serif;
+  padding-top: 15px;
 }
 .client-section > p {
   text-align: center;
@@ -616,11 +630,11 @@ body{
   height: 100%;
 }
 
-/* Image inside slide */
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* change from cover → contain */
+  background-color: #fff; /* optional: gives a clean background */
   border-radius: 40px;
 }
 
@@ -632,4 +646,402 @@ body{
 @keyframes fadeEffect {
   from { opacity: 0.4; }
   to { opacity: 1; }
+}
+
+
+/* testimonials section */
+.testimonials-section {
+  padding-top: 90px;
+  background-color: #f5f5f5; /* light gray background */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section .testimonials-h {
+  text-align: center;
+  margin: 5px auto;
+  max-width: 800px;
+  color: #023047;
+  font-size: 36px;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+  font-family: montserrat, sans-serif;
+}
+
+.testimonials-slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 40px;
+}
+
+.testimonial-slide {
+  display: none;
+  animation: fade 1.5s ease-in-out;
+}
+
+.testimonial-slide.active {
+  display: block;
+}
+
+/* Slide transition animation */
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.testimonials-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+.testimonials-content img {
+  flex: 1;
+  max-width: 45%;
+  height: 550px;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.testimonials-text {
+  flex: 1;
+  max-width: 50%;
+  color: #333;
+}
+
+.testimonials-section .testimonials-text h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--highlight-color, #023047);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.testimonials-text p {
+  line-height: 1.6;
+  font-size: large;
+  font-family: "Playfair Display", serif;
+}
+
+.testimonials-text .testimonials-p {
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  color: #555;
+}
+
+/* Optional: next/prev buttons (add later if you want manual control) */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px;
+  color: #023047;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  user-select: none;
+}
+
+.prev:hover, .next:hover {
+  background-color: #023047;
+  color: #fff;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* contact section */
+.contact-section {
+  padding: 80px 100px;
+  background-color: #fff;
+  max-width: 100%;
+  text-align: center;
+}
+
+.contact-section .contact-h {
+  color: #023047;
+  font-size: 36px;
+  font-family: montserrat, sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+
+.contact-intro {
+  margin: 20px auto;
+  max-width: 700px;
+  color: #333;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.contact-info, .contact-form {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  text-align: left;
+}
+
+.contact-info h3,
+.contact-form h3 {
+  font-family: "Playfair Display", serif;
+  color: #023047;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-family: montserrat, sans-serif;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #023047;
+  font-family: montserrat, sans-serif;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0077b6;
+}
+
+/* contact form */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: montserrat, sans-serif;
+  font-size: 15px;
+}
+
+.contact-form button {
+  background-color: #023047;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: montserrat, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0077b6;
+}
+
+/* footer */
+.footer {
+  background-color: #023047;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-family: montserrat, sans-serif;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+
+
+/* =========================================
+   RESPONSIVENESS
+========================================= */
+
+/* Tablets (portrait & landscape) */
+@media (max-width: 992px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px auto;
+    padding: 15px 30px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .home-section {
+    flex-direction: column;
+    margin-left: 0;
+    padding: 0 40px;
+    text-align: center;
+  }
+
+  .home-text, .home-section img {
+    max-width: 100%;
+  }
+
+  .about-content,
+  .testimonials-content,
+  .client-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content img,
+  .testimonials-content img,
+  .client-content img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .about-text,
+  .testimonials-text,
+  .client-text {
+    max-width: 100%;
+  }
+
+  .cards-wrapper {
+    width: 100%;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Small tablets & large phones */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .home-text h1 {
+    font-size: 36px;
+  }
+
+  .home-text h2 {
+    font-size: 40px;
+  }
+
+  .home-text h3 {
+    font-size: 20px;
+  }
+
+  .btn {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .about-section,
+  .services-section,
+  .testimonials-section,
+  .client-section,
+  .contact-section {
+    padding: 40px 20px;
+  }
+
+  .testimonials-content img {
+    height: 350px;
+  }
+
+  .specialities h3,
+  .voiceover-cards h3,
+  .poetry-cards h3,
+  .mc-cards h3 {
+    margin-left: 20px;
+  }
+
+  .contact-info, .contact-form {
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .social-links {
+    align-items: center;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .navbar {
+    border-radius: 20px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .home-text h1 {
+    font-size: 28px;
+  }
+
+  .home-text h2 {
+    font-size: 32px;
+  }
+
+  .home-text h3 {
+    font-size: 18px;
+  }
+
+  .testimonials-content img {
+    height: 250px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    min-width: unset;
+  }
+
+  .contact-section {
+    padding: 30px 10px;
+  }
+
+  .contact-intro {
+    font-size: 16px;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 15px;
+  }
 }

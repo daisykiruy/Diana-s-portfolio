@@ -4,7 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diana Torongei</title>
+
+  <!-- Font Awesome Icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-M9yI8mC8f/tx6uLrPOKccR6F7zSuBrLQhcWIr+1oClySHj5aZqQ1qN9+EKuqrH+WZbZGE1cgz8q1qjBeD5Qx4g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
   <link rel="stylesheet" href="style.css">
+
 
   <!-- google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +28,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 
-
+ <style>
+    html {
+      scroll-behavior: smooth;
+    } 
+  </style>
 
 </head>
 <body>
@@ -36,7 +51,7 @@
 </nav>
 
 <!-- home section -->
- <div class="home-section">
+ <div class="home-section" id="home">
   <div class="home-text">
     <h1 class="heading-one">IAM </h1>
     <h2>Diana Torongei</h2>
@@ -65,7 +80,7 @@
  </div>
 
 <!-- about section -->
-<div class="about-section">
+<div class="about-section" id="about">
   <h1 class="about-h">About Me</h1>
   <p>I’m a Kenyan-based voice-over artist, performing poet, and corporate MC/host with a passion for storytelling in all its forms</p>
 
@@ -106,7 +121,7 @@
 
 <!-- services section -->
  
- <div class="services-section">
+ <div class="services-section" id="services">
   <h1>services</h1>
   <p>let us explore what I offer</p>
 
@@ -179,7 +194,7 @@
  </div>
 
  <!-- clients and collaboration section -->
-<div class="client-section">
+<div class="client-section" id="Clients and collaborations">
   <h1 class="client-h">Clients & Collaborations</h1>
   <p>Some of the brands and organizations I have had the pleasure to work with</p>
 
@@ -191,22 +206,111 @@
     <!-- Slideshow container -->
     <div class="slideshow">
       <div class="slide fade">
-        <img src="images/client1.jpg" alt="Client 1">
+        <img src="images/client1.jpg" alt="say">
       </div>
       <div class="slide fade">
-        <img src="images/client2.jpg" alt="Client 2">
+        <img src="images/client2.png" alt="Client 2">
       </div>
       <div class="slide fade">
-        <img src="images/client3.jpg" alt="Client 3">
+        <img src="images/client3.png" alt="Client 3">
       </div>
       <div class="slide fade">
-        <img src="images/client4.jpg" alt="Client 4">
+        <img src="images/client4.png" alt="Client 4">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- testimonials section -->
+<div class="testimonials-section" id="Testimonials">
+  <h1 class="testimonials-h">Testimonials</h1>
+
+  <div class="testimonials-slideshow">
+    <div class="testimonial-slide fade">
+      <div class="testimonials-content">
+        <div class="testimonials-text">
+         <h2>Truly Captivating Talent</h2>
+         <p>
+          Working with Diana was an incredible experience — her voice carries warmth, confidence, and emotion that instantly connects with the audience. 
+          Every project she touches feels alive and intentional, blending professionalism with genuine artistry. 
+          Her delivery doesn’t just speak — it moves you.
+         </p>
+
+          <p class="testimonials-p">— Daisy Kirui Torongei</p>
+        </div>
+        <img src="images/test1.jpg" alt="Diana">
+      </div>
+    </div>
+
+    <div class="testimonial-slide fade">
+      <div class="testimonials-content">
+        <div class="testimonials-text">
+          <h2>Amazing Professionalism!</h2>
+          <p>
+            Working with Diana was a delight — her voice brought our campaign to life! 
+            She’s not just talented but truly understands brand emotion.
+          </p>
+          <p class="testimonials-p">— Brand Manager, XYZ Studios</p>
+        </div>
+        <img src="images/test2.jpg" alt="Client 2">
+      </div>
+    </div>
+
+    <div class="testimonial-slide fade">
+      <div class="testimonials-content">
+        <div class="testimonials-text">
+          <h2>Powerful Performance</h2>
+          <p>
+            Her stage presence is unmatched. Every poem feels personal and moving — audiences were completely captivated.
+          </p>
+          <p class="testimonials-p">— Event Organizer, Nairobi Poetry Fest</p>
+        </div>
+        <img src="images/test3.jpg" alt="Client 3">
       </div>
     </div>
   </div>
 </div>
 
 
+<!-- contact section -->
+<div class="contact-section" id="Contact">
+  <h1 class="contact-h">Let's Connect</h1>
+  <p class="contact-intro">
+    Have a project, event, or collaboration in mind? I’d love to hear from you.
+    Reach out through any of the platforms below or send a direct message.
+  </p>
+
+  <div class="contact-content">
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p><strong>Email:</strong> dianatorongei@email.com</p>
+      <p><strong>Phone:</strong> +254 700 000 000</p>
+      <p><strong>Location:</strong> Nairobi, Kenya</p>
+
+      <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+      </div>
+    </div>
+
+    <form class="contact-form">
+      <h3>Send a Message</h3>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<!-- footer section -->
+<footer class="footer">
+  <p>© 2025 Diana Torongei. All Rights Reserved.</p>
+  <p>Designed by Daisy Kirui</p>
+</footer>
 
   <script src="main.js"></script>
 </body>

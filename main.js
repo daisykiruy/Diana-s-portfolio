@@ -30,3 +30,25 @@ function showSlides() {
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
+
+
+// Testimonials slideshow functionality
+let testimonialIndex = 0;
+showTestimonials();
+
+function showTestimonials() {
+  const testimonials = document.querySelectorAll(".testimonials-slideshow .testimonial-slide");
+  
+  // hide all slides
+  testimonials.forEach(slide => (slide.style.display = "none"));
+  
+  // move to next slide
+  testimonialIndex++;
+  if (testimonialIndex > testimonials.length) { testimonialIndex = 1; }
+  
+  // show current slide
+  testimonials[testimonialIndex - 1].style.display = "block";
+  
+  // change slide every 5 seconds
+  setTimeout(showTestimonials, 5000);
+}
