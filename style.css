@@ -998,12 +998,42 @@ body{
 
 /* Mobile phones */
 @media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   .navbar {
     border-radius: 20px;
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .home-section,
+  .about-section,
+  .services-section,
+  .client-section,
+  .testimonials-section,
+  .contact-section {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 30px 15px;
   }
 
   .home-text h1 {
@@ -1018,13 +1048,24 @@ body{
     font-size: 18px;
   }
 
+  .testimonials-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .testimonials-content img {
     height: 250px;
+    max-width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
   }
 
   .cards-container {
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .card {
@@ -1043,5 +1084,6 @@ body{
   .footer {
     font-size: 12px;
     padding: 15px;
+    text-align: center;
   }
 }
