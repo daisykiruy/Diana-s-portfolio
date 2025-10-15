@@ -25,10 +25,10 @@ body{
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 0;                /* keeps it at the top of the screen */
+  top: 0;                
   left: 0;
   right: 0;
-  z-index: 1000;         /* ensures it's always above all other content */
+  z-index: 1000;         
 }
 
 .navbar .logo{
@@ -109,24 +109,25 @@ body{
 }
 
 .btn {
-  background: var(--secondary-color);   /* yellow */
-  color: var(--primary-color);          /* deep navy text */
+  background: var(--secondary-color);  
+  color: var(--primary-color);          
   padding: 12px 24px;
   margin-right: 10px;  
-  margin-top: 30px;                 /* space between buttons */
+  margin-top: 30px;                 
   border: none;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  text-transform: uppercase;            /* makes button text uppercase */
-  transition: all 0.3s ease;            /* smooth hover effect */
+  text-transform: uppercase;            
+  text-decoration: none;        
 }
 
+
 .btn:hover {
-  background: var(--highlight-color);   /* orange */
-  color: var(--bg-color, #ffffff);      /* white text on hover */
-  transform: translateY(-2px);          /* slight lift */
+  background: var(--highlight-color);   
+  color: var(--bg-color, #ffffff);      
+  transform: translateY(-2px);          
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -157,7 +158,7 @@ body{
 /* about section */
 .about-section {
   padding: 80px 100px;
-  background-color: #f5f5f5; /* light gray background */
+  background-color: #f5f5f5; 
   max-width:100%;
 }
 .about-section .about-h{
@@ -363,7 +364,7 @@ body{
 .services-section{
   padding:10px;
   padding-top: 90px;
-  background-color: #f5f5f5; /* light gray background */
+  background-color: #f5f5f5; 
   max-width:100%;
   padding-bottom: 60px;
 }
@@ -633,8 +634,8 @@ body{
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* change from cover → contain */
-  background-color: #fff; /* optional: gives a clean background */
+  object-fit: contain; 
+  background-color: #fff; 
   border-radius: 40px;
 }
 
@@ -652,7 +653,7 @@ body{
 /* testimonials section */
 .testimonials-section {
   padding-top: 90px;
-  background-color: #f5f5f5; /* light gray background */
+  background-color: #f5f5f5; 
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -739,7 +740,7 @@ body{
   color: #555;
 }
 
-/* Optional: next/prev buttons (add later if you want manual control) */
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
