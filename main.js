@@ -64,4 +64,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.getElementById('copyEmail').addEventListener('click', () => {
+  const email = 'dianatorongei@gmail.com';
+  navigator.clipboard.writeText(email)
+    .then(() => alert('Email copied to clipboard!'))
+    .catch(() => alert('Could not copy email. Please copy manually.'));
+});
 
+const audioCard = document.getElementById("audio-card");
+const audioDemo = document.getElementById("audio-demo");
+const playIcon = document.querySelector(".audio-play-btn");
+
+audioCard.addEventListener("click", () => {
+  if (audioDemo.paused) {
+    audioDemo.play();
+    playIcon.classList.add("pulse");
+    audioCard.classList.add("playing");
+  } else {
+    audioDemo.pause();
+    audioDemo.currentTime = 0;
+    playIcon.classList.remove("pulse");
+    audioCard.classList.remove("playing");
+  }
+});
