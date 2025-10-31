@@ -1,3 +1,13 @@
+// Wait until everything (images, audio, etc.) is fully loaded
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    loader.classList.add("hidden");
+  });
+
+
+
+
+
 // Select all wrappers
 const wrappers = document.querySelectorAll('.cards-wrapper');
 
@@ -71,9 +81,45 @@ document.getElementById('copyEmail').addEventListener('click', () => {
     .catch(() => alert('Could not copy email. Please copy manually.'));
 });
 
+
+// const audioCard = document.getElementById("audio-card");
+// const audioDemo = document.getElementById("audio-demo");
+// const playIcon = document.querySelector(".audio-play-btn");
+
+// audioCard.addEventListener("click", () => {
+//   if (audioDemo.paused) {
+//     audioDemo.play();
+//     playIcon.classList.add("pulse");
+//     audioCard.classList.add("playing");
+//   } else {
+//     audioDemo.pause();
+//     audioDemo.currentTime = 0;
+//     playIcon.classList.remove("pulse");
+//     audioCard.classList.remove("playing");
+//   }
+// });
+
+// // Update progress bar as audio plays
+// audioDemo.addEventListener("timeupdate", () => {
+//   if (audioDemo.duration > 0) {
+//     const progress = (audioDemo.currentTime / audioDemo.duration) * 100;
+//     progressBar.style.width = `${progress}%`;
+//   }
+// });
+
+// // Reset when audio ends
+// audioDemo.addEventListener("ended", () => {
+//   playIcon.classList.remove("pulse");
+//     audioCard.classList.remove("playing");
+//     progressBar.style.width = "0%";
+// });
+
 const audioCard = document.getElementById("audio-card");
 const audioDemo = document.getElementById("audio-demo");
 const playIcon = document.querySelector(".audio-play-btn");
+const progressBar = document.getElementById("audio-progress-bar");
+const currentTimeDisplay = document.getElementById("current-time");
+const totalTimeDisplay = document.getElementById("total-time");
 
 audioCard.addEventListener("click", () => {
   if (audioDemo.paused) {
@@ -82,8 +128,36 @@ audioCard.addEventListener("click", () => {
     audioCard.classList.add("playing");
   } else {
     audioDemo.pause();
-    audioDemo.currentTime = 0;
     playIcon.classList.remove("pulse");
     audioCard.classList.remove("playing");
   }
 });
+
+// 📈 Update progress bar & current time
+audioDemo.addEventListener("timeupdate", () => {
+  if (audioDemo.duration > 0) {
+    const progress = (audioDemo.currentTime / audioDemo.duration) * 100;
+    progressBar.style.width = `${progress}%`;
+    currentTimeDisplay.textContent = formatTime(audioDemo.currentTime);
+  }
+});
+
+// ⏳ Display total duration once loaded
+audioDemo.addEventListener("loadedmetadata", () => {
+  totalTimeDisplay.textContent = formatTime(audioDemo.duration);
+});
+
+// 🔁 Reset when audio ends
+audioDemo.addEventListener("ended", () => {
+  playIcon.classList.remove("pulse");
+  audioCard.classList.remove("playing");
+  progressBar.style.width = "0%";
+  currentTimeDisplay.textContent = "0:00";
+});
+
+// ⏱️ Helper function to format time
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+}

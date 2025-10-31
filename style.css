@@ -19,6 +19,43 @@ body{
 
 }
 
+/* Page Loader Styles */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* you can change this to your site's background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3; /* Light grey */
+  border-top: 6px solid var(--highlight-color, #ff4081); /* Your accent color */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hide loader once page is loaded */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
 /* navbar area */
 .navbar {
   background-color: white;
@@ -223,16 +260,12 @@ body{
   border-radius: 40px;
   object-fit: cover;
   margin-top: 0;
-  
-  /* illuminated gradient border */
   border-radius: 40px;
   background: 
     linear-gradient(to right, var(--highlight-color), white) border-box,
     radial-gradient(circle at top left, var(--highlight-color), transparent 70%) border-box;
   background-origin: border-box;
   background-clip: content-box, border-box;
-
-  /* glow only on top and left */
   box-shadow: -15px -15px 30px rgba(251, 133, 0, 0.4);
  
 }
@@ -320,7 +353,6 @@ body{
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Overlay for better text visibility */
 .card::before {
   content: "";
   position: absolute;
@@ -339,14 +371,11 @@ body{
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
-/* Unique backgrounds for each card */
 .card.voiceover {
   background-image: url('images/diana3.jpg');
   background-size: cover; 
   background-position: center 20%; 
 }
-
-
 .card.hosting {
   background-image: url('images/diana4.jpg');
    background-size: cover; 
@@ -369,6 +398,7 @@ body{
    background-size: cover; 
   background-position: center 20%; 
 }
+
 
 /* Scroll buttons */
 .scroll-btn {
@@ -465,15 +495,9 @@ body{
   padding-left: 1.6rem;
   padding-bottom: 10px;
 }
-/* Unique backgrounds for each poetry card •	Commercial
-•	Narration
-•	IVR/Telephony
-•	Podcast Intros
-•	Documentaries
-•	Swahili/Local Dialect Work (if applicable)
-Explore my range—warm, authoritative, vibrant, and versatile.*/
+
 .card.narration {
-  background-image: url('images/IMG-20251004-WA0015.jpg');
+  background-image: url('images/diana2.jpg');
 }
 
 .card.telephony {
@@ -525,7 +549,7 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   padding-left: 1.6rem;
   padding-bottom: 10px;
 }
-/* Unique backgrounds for each poetry card */
+
 .card.womanhood {
   background-image: url('images/IMG-20251004-WA0015.jpg');
 }
@@ -579,7 +603,7 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   padding: 10px;
   padding-left: 1.6rem;
 }
-/* Unique backgrounds for each mc card */
+
 .card.corporate {
   background-image: url('images/diana2.jpg');
 }
@@ -589,7 +613,7 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
 }
 
 .card.awards {
-  background-image: url('images/podcast.jpg');
+  background-image: url('images/diana\ 1.jpg');
 }
 
 .card.launches{
@@ -597,15 +621,15 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
 }
 
 .card.conferences{
-  background-image: url('images/emceeing.jpg');
-}
-.card.community{
   background-image: url('images/diana\ 1.jpg');
 }
+.card.community{
+  background-image: url('images/diana7.jpg');
+}
 
 
 
-/* ====== AUDIO DEMO SECTION ====== */
+/*AUDIO DEMO SECTION */
 .audio-demo-section {
   text-align: center;
   margin: 20px 20px 50px 20px;
@@ -647,7 +671,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   padding-left: 1.6rem;
 }
 
-/* The audio card box */
 .audio-card {
   position: relative;
   width: 100%;
@@ -665,8 +688,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   transform: scale(1.03);
   filter: brightness(1.05);
 }
-
-/* Play button styling */
 .audio-play-btn {
   position: absolute;
   top: 50%;
@@ -681,7 +702,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Pulse effect when playing */
 .audio-play-btn.pulse {
   animation: pulseGlow 1.8s infinite ease-in-out;
 }
@@ -691,9 +711,42 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; filter: brightness(1.3); }
   100% { transform: translate(-50%, -50%) scale(1); opacity: 1; filter: brightness(1); }
 }
+/* 🔊 AUDIO PROGRESS BAR */
+.audio-progress {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.audio-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-color, #f77f00);
+  border-radius: 10px;
+  transition: width 0.1s linear;
+}
+/* Time display below progress bar */
+.audio-time {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: white;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.audio-time span {
+  display: inline-block;
+  min-width: 40px;
+}
 
 
-/* Main card styling */
+/* hire card */
 .hire-card {
   width: 700px;
   padding: 20px 30px;
@@ -710,7 +763,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   position: relative;
 }
 
-/* Hover effect: glowing torch border */
 .hire-card:hover {
   transform: translateY(-10px); /* smooth upward motion */
   
@@ -723,7 +775,7 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
     10px -10px 30px rgba(255, 220, 100, 0.5), /* top-right soft light */
     0 0 80px rgba(255, 255, 200, 0.6);       /* white outer halo */
 }
-/* Typography */
+
 .hire-card h1 {
   font-size: 28px;
   padding-top: 0;
@@ -743,7 +795,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   margin-bottom: 10px;
 }
 
-/* Email link */
 .email-link {
   display: inline-block;
   font-size: 16px;
@@ -759,7 +810,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   color: var(--highlight-color);
 }
 
-/* Copy button */
 #copyEmail {
   padding: 10px 20px;
   border-radius: 8px;
@@ -845,7 +895,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   overflow: hidden;
 }
 
-/* Each slide */
 .slide {
   display: none;
   width: 100%;
@@ -860,7 +909,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   border-radius: 40px;
 }
 
-/* Fade animation */
 .fade {
   animation: fadeEffect 1.5s ease-in-out;
 }
@@ -910,8 +958,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
 .testimonial-slide.active {
   display: block;
 }
-
-/* Slide transition animation */
 @keyframes fade {
   from { opacity: 0.4; }
   to { opacity: 1; }
@@ -961,7 +1007,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   color: #555;
 }
 
-
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -984,6 +1029,7 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
 .prev { left: 20px; }
 .next { right: 20px; }
 
+
 /* contact section */
 .contact-section {
   padding: 40px 100px;
@@ -994,7 +1040,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   margin-top: 0;
 }
 
-/* Heading */
 .contact-section .contact-h {
   color: #023047;
   font-size: 36px;
@@ -1011,7 +1056,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   font-size: 18px;
   line-height: 1.7;
   padding-bottom: 40px;
-  /* margin-bottom: 100px; */
   max-width: 700px;
   text-align: left;
 }
@@ -1025,7 +1069,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   flex-wrap: wrap;
 }
 
-/* contact info */
 .contact-info {
   flex: 1;
   min-width: 320px;
@@ -1061,7 +1104,7 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   gap: 10px;
 }
 
-/* soacila links */
+/* social links */
 .social-links {
   margin-top: 25px;
   display: flex;
@@ -1114,7 +1157,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   position: relative;
 }
 
-/* Hover effect: glowing torch border */
 .hire-card:hover {
   transform: translateY(-10px);
   box-shadow:
@@ -1145,8 +1187,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   color: #333;
   margin-bottom: 10px;
 }
-
-/* Email link */
 .email-link {
   display: inline-block;
   font-size: 16px;
@@ -1162,7 +1202,6 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   color: var(--highlight-color, #fb8500);
 }
 
-/* Copy button */
 #copyEmail {
   padding: 10px 20px;
   border-radius: 8px;
@@ -1213,11 +1252,11 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-flex;
-  align-items: center; /* vertically center icon + text */
+  align-items: center; 
 }
 
 .footer .social-links i {
-  margin-right: 6px; /* adds space between icon and text */
+  margin-right: 6px; 
 }
 
 .footer .social-links a:hover {
@@ -1256,7 +1295,7 @@ Explore my range—warm, authoritative, vibrant, and versatile.*/
 }
 
 
-/* responsiveness */
+/* ===RESPONSIVENESS=== */
 body {
   max-width: 100%;
   overflow-x: hidden;
@@ -1271,13 +1310,47 @@ body {
   .home-text h1 {
     font-size: 36px;
   }
+  .contact-section {
+    padding: 60px 8%;
+  }
+
+  .contact-section .contact-h {
+    font-size: 34px;
+  }
+
+  .contact-intro {
+    font-size: 17px;
+  }
+
+  .hire-card {
+    width: 90%;
+  }
 }
 
 /* Tablets */
 @media (max-width: 991px) and (min-width: 768px) {
-  .navbar {
-    margin: 10px;
+  
+  .hamburger {
+    display: block;
   }
+  .navbar{
+    margin: 20px auto;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  
   .home-section {
     padding-top: 100px;
     flex-direction: column;
@@ -1290,6 +1363,13 @@ body {
     height: auto;
     margin-top: 20px;
   }
+  .about-section{
+    padding: 30px;
+  }
+  .audio-card {
+    height: 200px;
+    width: 550px;
+  }
 }
 
 /* Mobile Devices */
@@ -1300,12 +1380,13 @@ body {
   padding: 0;
   width: 100%;
 }
-
   .hamburger {
     display: block;
   }
   .navbar{
     margin: 5px auto;
+   
+ 
   }
   .nav-links {
     display: none;
@@ -1324,7 +1405,7 @@ body {
   
   .home-section {
     display: block;
-    padding-top: 80px;
+    padding-top:80px;
     flex-direction: column;
     margin: 10px;
     padding: 10px;
@@ -1333,13 +1414,25 @@ body {
     display: block;
     max-width: 100%;
   }
+  .home-text h1{
+    font-size: 30px;
+  }
+  
+  .home-text h2{
+    font-size: 30px;
+  }
+  
+  .home-text h3{
+    font-size: 20px;
+  }
+  
   .numbers{
     gap: 2px;
+    padding-bottom: -10px;
   }
   .home-section img {
     max-width: 100%;
     height: auto;
-    margin-top: 20px;
   }
   .btn-container{
     flex-direction: column;
@@ -1351,7 +1444,8 @@ body {
     margin: 0;
     padding-right: 60px;
     padding-left: 60px;
-    
+    margin-bottom: -10px;
+  
   }
   .about-section {
     padding: 20px;
@@ -1414,7 +1508,7 @@ body {
     max-width: 100%;
     height: auto;
   }
-  .contact-section{
+  /* .contact-section{
     padding: 20px;
     max-width: 100%;
   }
@@ -1426,48 +1520,10 @@ body {
     display: block;
     max-width: 100%;
     padding: 10px 20px 10px 5px;
-  }
-}
-
-
-/* Small Mobile Devices */
-@media (max-width: 480px) {
-  .home-section {
-    padding-top: 60px;
-  }
-  .home-text h1 {
-    font-size: 24px;
-  }
-  .home-text h2 {
-    font-size: 20px;
-  }
-  .home-text h3 {
-    font-size: 18px;
-  }
-}
-
-/* Extra Small Mobile Devices */
-@media (max-width: 320px) {
-  .home-section {
-    padding-top: 40px;
-  }
-  .home-text h1 {
-    font-size: 20px;
-  }
-  .home-text h2 {
-    font-size: 18px;
-  }
-  .home-text h3 {
-    font-size: 16px;
-  }
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+  } */
   .audio-card {
-    height: 220px;
-    width: 300px;
+    height: 150px;
+    width: 250px;
   }
 
   .audio-play-btn {
@@ -1486,29 +1542,8 @@ body {
   .audio-demo-section p {
     font-size: 15px;
   }
-}
 
-/* contact responsiveness */
-@media (max-width: 1024px) {
-  .contact-section {
-    padding: 60px 8%;
-  }
-
-  .contact-section .contact-h {
-    font-size: 34px;
-  }
-
-  .contact-intro {
-    font-size: 17px;
-  }
-
-  .hire-card {
-    width: 90%;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-content {
+  /* .contact-content {
     flex-direction: column;
     align-items: center;
   }
@@ -1526,11 +1561,11 @@ body {
 
   .social-links {
     align-items: center;
-  }
+  } */
 
   .hire-card {
     width: 95%;
-    margin: 30px 0;
+    margin: 30px 8px;
     text-align: center;
   }
 
@@ -1539,7 +1574,90 @@ body {
   }
 }
 
+/* surface duo and others */
+/* 🌟 Surface Duo (540x720px) — keep flex, fix vertical overlap */
+@media (min-width: 540px) and (max-width: 720px) {
+  .home-section {
+    display: flex;
+    flex-direction: column; /* keep side-by-side layout */
+    padding-top: 80px; /* increased to push content below navbar */
+    
+  }
+
+  .home-text {
+    
+  }
+
+  .home-text h1 {
+    font-size: 46px;
+    margin-bottom: 10px;
+  }
+
+  .home-text h2 {
+    font-size: 54px;
+    margin-top: 5px;
+  }
+
+  .home-text h3 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .home-text p {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .btn-container {
+    max-width: 100%;
+    gap: 30px;
+    
+  }
+
+  .btn {
+    padding: 12px 70px;
+    font-size: 16px;
+  }
+
+  .home-section img {
+   
+    height: 480px;
+    object-fit: cover;
+    border-radius: 10px;
+    transform: none;
+  }
+
+  .numbers {
+    gap: 0px;
+    margin-top: 30px;
+  }
+}
+
+
+/* Small Mobile Devices */
 @media (max-width: 480px) {
+  .home-section {
+    padding-top: 60px;
+  }
+  .home-text h1 {
+    font-size: 30px;
+    padding-top: 30px;
+
+  }
+  .home-text h2 {
+    font-size: 32px;
+  }
+  .home-text h3 {
+    font-size: 20px;
+  }
+  .numbers{
+    gap: 0;
+   margin-top: 20px;
+
+  }
+  .numbers p{
+    font-size: 10px;
+  }
   .contact-section {
     padding: 40px 5%;
   }
@@ -1569,3 +1687,33 @@ body {
     font-size: 15px;
   }
 }
+
+/* Extra Small Mobile Devices */
+@media (max-width: 320px) {
+  .home-section {
+    padding-top: 40px;
+  }
+  .home-text h1 {
+    font-size: 20px;
+  }
+  .home-text h2 {
+    font-size: 18px;
+  }
+  .home-text h3 {
+    font-size: 16px;
+  }
+}
+
+
+/* contact responsiveness */
+/* @media (max-width: 1024px) {
+  
+}
+
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 480px) {
+  
+} */

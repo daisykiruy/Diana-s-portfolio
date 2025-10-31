@@ -28,6 +28,10 @@
 
 </head>
 <body>
+<!-- 🌀 Page Loader -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
 
   <!-- navbar -->
 <nav class="navbar">
@@ -202,8 +206,18 @@
   <div class="audio-card" id="audio-card">
     <img src="images/play-icon.png" alt="Play Audio Demo" class="audio-play-btn" />
     <audio id="audio-demo" src="audio/Diana Chelangat.mp3"></audio>
+
+    <!-- 🔊 New progress bar -->
+    <div class="audio-progress">
+      <div class="audio-progress-bar" id="audio-progress-bar"></div>
+    </div>
+    <!-- ⏱️ Time display -->
+<div class="audio-time">
+  <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+</div>
   </div>
 </div>
+
 
 
 <!-- connect-card -->
